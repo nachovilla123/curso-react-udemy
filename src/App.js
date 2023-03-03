@@ -26,7 +26,7 @@ function App() {
 
       <h1 className='title'>Rick & Morty</h1>
       {characters ? (// cuando characters tiene algo muestro los personajes, cuando no, muestro el boton para buscarlos.
-        <Characters characters={characters}></Characters>
+        <Characters characters={characters} setCharacters={setCharacters}></Characters>
       ) : (
         <>
         <img src={imageRickMorty} alt='Rick & Morty' className='img-home'></img>
@@ -34,31 +34,8 @@ function App() {
         </>
       ) }
       
-        <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contacto</Link>
-              </li>
-              <li>
-                <Link to="/aboutme">About Me</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-             
-            </ul>
-          </div>
-          <Routes>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/aboutme" element={<AboutMe />} />
-            <Route path="/profile/:name" element={<Profile />} />
-           
-          </Routes> 
-        </Router>
+      
+    
         
       </header>
     </div>

@@ -1,11 +1,16 @@
 export default function Characters(props){
     
-    const {characters} = props // characters era lo que le pasaba desde el otro componente
+    const {characters,setCharacters} = props // characters era lo que le pasaba desde el otro componente
+
+    const resetCharacters = () => {
+        console.log("Reseteando");
+        setCharacters(null);
+    }
 
     return (
         <div className="characters">
             <h1> Personajes: </h1>
-            <span className="back-home">Home</span>
+            <span className="back-home" onClick={resetCharacters}>Home</span>
             <div className="container-characters">
                 {characters.map((character,index) =>( // return implicito, es para no hacer un return dentro de un return.
                     <div className="character-container" key={index}>
@@ -40,7 +45,7 @@ export default function Characters(props){
                     </div>
                 ))}
             </div>
-                <span className="back-home">Home</span>
+            <span className="back-home" onClick={resetCharacters}>Home</span>
         </div>
        
     );
